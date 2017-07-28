@@ -1,0 +1,13 @@
+package com.example.noahlovato.framework.Interfaces;
+
+/**
+ * Created by noah.lovato on 7/28/2017.
+ */
+
+public interface Sound {
+
+    public void play();
+
+    public void dispose();
+
+}

@@ -45,5 +45,4 @@ public interface Input {
 
     public List<TouchEvent> getTouchEvents();
 
-
 }
