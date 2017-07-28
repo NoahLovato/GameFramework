@@ -6,7 +6,7 @@ package com.example.noahlovato.framework.Interfaces;
 
 public interface Sound {
 
-    public void play();
+    public void play(float volume);
 
     public void dispose();
 
