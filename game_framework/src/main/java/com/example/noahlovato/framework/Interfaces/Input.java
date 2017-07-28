@@ -1,5 +1,7 @@
 package com.example.noahlovato.framework.Interfaces;
 
+import java.util.List;
+
 /**
  * Created by noah.lovato on 7/28/2017.
  */
@@ -24,6 +26,24 @@ public interface Input {
         public int x,y;
         public int pointer;
     }
+
+    public boolean isKeyPressed(int keyCode);
+
+    public boolean isTouchDown(int pointer);
+
+    public int getTouchX(int pointer);
+
+    public int getTouchY(int pointer);
+
+    public float getAccelX();
+
+    public float getAccelY();
+
+    public float getAccelZ();
+
+    public List<KeyEvent> getKeyEvents();
+
+    public List<TouchEvent> getTouchEvents();
 
 
 }
