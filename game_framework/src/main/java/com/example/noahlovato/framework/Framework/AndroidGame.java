@@ -60,4 +60,65 @@ public class AndroidGame extends Activity implements Game {
         screen = getStartScreen();
         setContentView(renderView);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        screen.resume();
+        renderView.resume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        renderView.pause();
+        screen.pause();
+
+        if(isFinishing())
+            screen.dispose();
+
+    }
+
+    @Override
+    public Input getInput() {
+        return input;
+    }
+
+    @Override
+    public FileIO getFileIO() {
+        return fileIO;
+    }
+
+    @Override
+    public Graphics getGraphics() {
+        return graphics;
+    }
+
+    @Override
+    public Audio getAudio() {
+        return audio;
+    }
+
+    public void setScreen(Screen screen) {
+
+        if(screen == null)
+            throw new IllegalArgumentException("Screen must not be null");
+
+        this.screen.pause();
+        this.screen.dispose();
+        screen.resume();
+        screen.update(0);
+        this.screen = screen;
+
+    }
+
+    @Override
+    public Screen getCurrentScreen() {
+        return screen;
+    }
+
+    @Override
+    public Screen getStartScreen() {
+        return null;
+    }
 }

@@ -14,7 +14,7 @@ public interface Game {
 
     public Audio getAudio();
 
-    public void setScreen();
+    public void setScreen(Screen screen);
 
     public Screen getCurrentScreen();
 
